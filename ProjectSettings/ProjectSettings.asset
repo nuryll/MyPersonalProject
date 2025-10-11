@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 00000000000000000000000000000000
+  productGUID: d9b0d39124f3b404293eda76d901b5b0
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -775,7 +775,7 @@ PlayerSettings:
   cloudProjectId: 697704cc-c795-41cb-81e1-056062994b0f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Dungeon Generator 3D
+  projectName: MyPersonalProject 2025-10-11_20-50-56
   organizationId: unity_09df0ba674c0e086e259
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
