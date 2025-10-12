@@ -2,43 +2,44 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float rotationSpeed = 10f;
-    private Rigidbody rb;
+    public float speed = 5f;
+    public float turnSpeed = 45f;
+    private float horizontalInput;
+    private float forwardInput;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-    }
 
-    
+
+
     void Update()
     {
-        
-    }
+        // Reset input values each frame
+        horizontalInput = 0f;
+        forwardInput = 0f;
 
-    void FixedUpdate()
-    {
-        // Get movement input from arrow keys (or WASD)
-        float moveX = Input.GetAxis("Horizontal");  
-        float moveZ = Input.GetAxis("Vertical");
-
-        // Create movement vector
-        Vector3 movement = new Vector3(moveX, 0, moveZ);
-
-        // If player is moving
-        if (movement.magnitude > 0.1f)
+        // Forward & backward (W / UpArrow, S / DownArrow)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            // Normalize movement for consistent speed
-            movement.Normalize();
-
-            // Move player forward
-            rb.MovePosition(transform.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-            // Rotate player toward movement direction smoothly
-            Quaternion targetRotation = Quaternion.LookRotation(movement);
-            rb.rotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            forwardInput = 1f;   // move forward
         }
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            forwardInput = -1f;  // move backward
+        }
+
+        // Turning left & right (A / LeftArrow, D / RightArrow)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            horizontalInput = -1f; // turn left
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            horizontalInput = 1f;  // turn right
+        }
+
+        // Move forward/backward
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+
+        // Rotate left/right
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
     }
 }
