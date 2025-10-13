@@ -7,17 +7,6 @@ public class CameraFollow : MonoBehaviour
     public float followSpeed = 5f;    
     public float rotationSpeed = 5f;  
 
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
-
     void LateUpdate()
     {
         if (player == null) return;

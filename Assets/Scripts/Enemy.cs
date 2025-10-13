@@ -3,14 +3,14 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Movement Settings")]
+    
     public float walkSpeed = 2.5f;        // speed while chasing
     public float rotationSpeed = 5f;      // smooth rotation
     public float detectionRange = 4f;    // start chasing if player closer than this
     public float stopRange = 7f;         // stop chasing if player goes farther than this
 
-    [Header("References")]
-    private Transform player;
+    
+    public Transform player;
     private Animator anim;
 
     private bool isChasing = false;
@@ -72,13 +72,13 @@ public class Enemy : MonoBehaviour
         if (anim != null) anim.SetBool("isWalking", false);
     }
 
-    
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            //GameManager.Instance.GameOver();
+            GameManager.Instance.GameOver();
         }
     }
 }
