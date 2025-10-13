@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,37 +15,51 @@ public class PlayerController : MonoBehaviour
     public float minSpeed = 0.3f;
     public float maxScale = 2f;
 
+    public TextMeshProUGUI speedText;   
+    public TextMeshProUGUI weightText;  
+
     void Update()
     {
-        // Reset input values each frame
+
+        UpdateUI();
+        HandleMovement();
+
+    }
+
+    // Handles player movement
+    private void HandleMovement()
+    {
         horizontalInput = 0f;
         forwardInput = 0f;
 
-        // Forward & backward (W / UpArrow, S / DownArrow)
+        // Forward/backward input
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            forwardInput = 1f;   // move forward
-        }
+            forwardInput = 1f;
         else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            forwardInput = -1f;  // move backward
-        }
+            forwardInput = -1f;
 
-        // Turning left & right (A / LeftArrow, D / RightArrow)
+        // Turning input
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            horizontalInput = -1f; // turn left
-        }
+            horizontalInput = -1f;
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            horizontalInput = 1f;  // turn right
-        }
+            horizontalInput = 1f;
 
-        // Move forward/backward
+        // Move and rotate
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-
-        // Rotate left/right
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+    }
+
+    // Updates Speed and Weight text on UI
+    private void UpdateUI()
+    {
+        if (speedText != null)
+            speedText.text = $"Speed: {speed:F2}";
+
+        if (weightText != null)
+        {
+            float currentScale = model != null ? model.localScale.x : 1f;
+            weightText.text = $"Weight: {50 + currentScale*5 :F2}";
+        }
     }
 
     // Called when the player collects a fast-food item

@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public TMPro.TextMeshProUGUI scoreText;
+    public TextMeshProUGUI scoreText;
     private int score = 0;
 
     void Start()
