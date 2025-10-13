@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
     private Animator anim;
 
     private bool isChasing = false;
-    private bool isFrozen = false;
 
     void Start()
     {
@@ -24,7 +23,6 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (player == null || isFrozen) return;
 
         float distance = Vector3.Distance(transform.position, player.position);
 
@@ -46,7 +44,7 @@ public class Enemy : MonoBehaviour
 
     void MoveTowardPlayer()
     {
-        Vector3 dir = (player.position - transform.position);
+        Vector3 dir = (player.position -  transform.position);
         dir.y = 0;
         dir.Normalize();
 
@@ -74,25 +72,7 @@ public class Enemy : MonoBehaviour
         if (anim != null) anim.SetBool("isWalking", false);
     }
 
-    // Optional freeze for hearts
-    public void Freeze(float duration)
-    {
-        if (!isFrozen) StartCoroutine(FreezeRoutine(duration));
-    }
-
-    IEnumerator FreezeRoutine(float duration)
-    {
-        isFrozen = true;
-        if (anim != null) anim.SetBool("isWalking", false);
-        float t = 0f;
-        while (t < duration)
-        {
-            transform.Rotate(Vector3.up, 100f * Time.deltaTime); // spin in place
-            t += Time.deltaTime;
-            yield return null;
-        }
-        isFrozen = false;
-    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
