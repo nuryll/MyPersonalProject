@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (weightText != null)
         {
             float currentScale = model != null ? model.localScale.x : 1f;
-            weightText.text = $"Weight: {50 + currentScale*5 :F2}";
+            weightText.text = $"Weight: {50 + currentScale*5 :F2} kg";
         }
     }
 
