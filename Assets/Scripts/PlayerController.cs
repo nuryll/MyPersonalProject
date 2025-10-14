@@ -3,6 +3,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float speed = 5f;
     public float turnSpeed = 45f;
     private float horizontalInput;
@@ -15,6 +16,10 @@ public class PlayerController : MonoBehaviour
     public float minSpeed = 0.3f;
     public float maxScale = 2f;
 
+    [Header("Star Settings")]
+    public float speedIncrease = 1f;     // how much speed increases per star
+
+    [Header("UI References")]
     public TextMeshProUGUI speedText;   
     public TextMeshProUGUI weightText;  
 
@@ -81,5 +86,12 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.Log($"Gained weight! Speed: {speed:F2}");
+    }
+
+    // Called when the player collects a star
+    public void GainSpeed()
+    {
+        speed += speedIncrease;
+        Debug.Log($"Collected Star! New Speed: {speed:F2}");
     }
 }

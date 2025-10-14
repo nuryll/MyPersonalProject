@@ -10,6 +10,8 @@ TagManager:
   - Room
   - Enemy
   - FastFood
+  - Star
+  - Heart
   layers:
   - Default
   - TransparentFX
