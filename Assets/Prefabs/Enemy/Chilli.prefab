@@ -353,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 4088768668058530633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90.52, y: 0.10999994, z: 64.19}
+  m_LocalPosition: {x: 90.52, y: 0, z: 64.19}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -412,7 +412,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4088768668058530633}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -443,11 +443,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d91f0663d7dc7844b9a0423c9366092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0.8
+  walkSpeed: 0.5
   rotationSpeed: 70
   detectionRange: 4
   stopRange: 7
-  player: {fileID: 0}
 --- !u!1 &4466542094686311951
 GameObject:
   m_ObjectHideFlags: 0

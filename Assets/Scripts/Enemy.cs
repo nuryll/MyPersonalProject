@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public float stopRange = 7f;         // stop chasing if player goes farther than this
 
     
-    public Transform player;
+    private Transform player;
     private Animator anim;
 
     private bool isChasing = false;
