@@ -60,16 +60,16 @@ public class Enemy : MonoBehaviour
 
     void MoveTowardPlayer()
     {
-        Vector3 dir = (player.position -  transform.position);
+        Vector3 dir = (player.position - transform.position);
         dir.y = 0;
         dir.Normalize();
 
-        // Rotate smoothly toward player
-        Quaternion targetRot = Quaternion.LookRotation(dir);
+        // Rotate smoothly toward player — but flip 180° if model faces backward
+        Quaternion targetRot = Quaternion.LookRotation(dir) * Quaternion.Euler(0, 180, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
 
-        // Move forward
-        transform.position += transform.forward * walkSpeed * Time.deltaTime;
+        // Move forward in the correct visual direction
+        transform.position -= transform.forward * walkSpeed * Time.deltaTime;
 
         // Animation
         if (anim != null)
