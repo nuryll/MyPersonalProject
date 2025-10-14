@@ -241,7 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72eb72bb20737046828ec1130eb0b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 1
+  points: 5
+  pickupSound: {fileID: 0}
+  soundVolume: 0.8
 --- !u!1 &6267694706953054113
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,8 @@ using UnityEngine;
 public class FoodPickup : MonoBehaviour
 {
     public int points = 10;
-
+    public AudioClip pickupSound;  // Sound played when food is collected
+    public float soundVolume = 0.8f;
 
     void OnTriggerEnter(Collider other)
     {
@@ -12,11 +13,11 @@ public class FoodPickup : MonoBehaviour
             // Add points to score
             GameManager.Instance.AddScore(points);
 
-            // Optional: play particle or sound later
-            Debug.Log("Collected fast food!");
-
-            // Destroy object
-            Destroy(gameObject);
+            // Play sound effect at pickup position
+            if (pickupSound != null)
+            {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position, soundVolume);
+            }
 
             // Make player slower and larger
             PlayerController player = other.GetComponent<PlayerController>();
@@ -25,8 +26,12 @@ public class FoodPickup : MonoBehaviour
                 player.GainWeight();
             }
 
+            // Optional: particle or visual feedback
+            Debug.Log("Collected fast food!");
+
+            // Destroy food object
             Destroy(gameObject);
         }
     }
-    
+
 }
