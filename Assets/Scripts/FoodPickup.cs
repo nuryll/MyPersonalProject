@@ -4,7 +4,7 @@ public class FoodPickup : MonoBehaviour
 {
     public int points = 10;
     public AudioClip pickupSound;  // Sound played when food is collected
-    public float soundVolume = 0.8f;
+    public float soundVolume = 0.1f;
 
     void OnTriggerEnter(Collider other)
     {
