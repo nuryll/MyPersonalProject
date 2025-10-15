@@ -1874,7 +1874,7 @@ MonoBehaviour:
   speed: 2.5
   turnSpeed: 100
   model: {fileID: 2138168189}
-  speedDecreaseAmount: 0.03
+  speedDecreaseAmount: 0.07
   growthAmount: 0.05
   minSpeed: 0.3
   maxScale: 1.8
@@ -1908,7 +1908,7 @@ Transform:
   m_GameObject: {fileID: 1792564464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   - {fileID: 6920950056753047491, guid: f4c44bcd2030ab449b08b6dfa3c0f073, type: 3}
   enemyCount: 4
   enemyYOffset: -0.12
-  spawnAreaSize: {x: 10.34, y: 0, z: 8.49}
+  spawnAreaSize: {x: 9.91, y: 0, z: 5.87}
   respawnOverTime: 0
   respawnDelay: 5
 --- !u!1 &1811085128
@@ -2114,7 +2114,7 @@ Transform:
   m_GameObject: {fileID: 1860263168}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710665, y: -0, z: -0, w: 0.70710695}
-  m_LocalPosition: {x: 24.2, y: 98.31, z: 53.5}
+  m_LocalPosition: {x: 31.8, y: 98.31, z: 53.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
