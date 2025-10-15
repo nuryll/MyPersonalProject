@@ -1877,7 +1877,7 @@ MonoBehaviour:
   speedDecreaseAmount: 0.03
   growthAmount: 0.05
   minSpeed: 0.3
-  maxScale: 1.9
+  maxScale: 1.8
   speedIncrease: 0.5
   speedText: {fileID: 1989368383}
   weightText: {fileID: 1811085130}
