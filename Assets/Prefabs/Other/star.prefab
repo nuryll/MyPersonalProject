@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupSound: {fileID: 8300000, guid: d6945231be24c7240a281458fc849e1f, type: 3}
   soundVolume: 0.5
+  pickupParticle: {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
 --- !u!65 &1513035723536533144
 BoxCollider:
   m_ObjectHideFlags: 0

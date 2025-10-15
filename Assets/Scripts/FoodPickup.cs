@@ -26,7 +26,8 @@ public class FoodPickup : MonoBehaviour
                 player.GainWeight();
             }
 
-            // Optional: particle COMING SOON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           
+
             Debug.Log("Collected fast food!");
 
             // Destroy food object

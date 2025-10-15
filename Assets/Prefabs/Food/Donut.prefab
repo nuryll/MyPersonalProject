@@ -330,3 +330,4 @@ MonoBehaviour:
   points: 15
   pickupSound: {fileID: 8300000, guid: b90f53164c32de64f9aef08e3223091f, type: 3}
   soundVolume: 0.4
+  pickupParticle: {fileID: 3696007233179127096, guid: c248f95ffea8b8543bc7ad0fffe0216d, type: 3}

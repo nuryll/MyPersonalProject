@@ -125,6 +125,7 @@ MonoBehaviour:
   freezeDuration: 7
   pickupSound: {fileID: 8300000, guid: a65e44e8c694a3a4891eef0db109e331, type: 3}
   soundVolume: 0.5
+  pickupParticle: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
 --- !u!111 &5791456836745417827
 Animation:
   m_ObjectHideFlags: 0

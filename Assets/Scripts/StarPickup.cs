@@ -5,7 +5,7 @@ public class StarPickup : MonoBehaviour
     [Header("Sound Settings")]
     public AudioClip pickupSound;      
     public float soundVolume = 0.8f;
-
+    public GameObject pickupParticle;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -24,6 +24,10 @@ public class StarPickup : MonoBehaviour
             }
 
             Debug.Log("Star collected! Speed increased!");
+
+            // Particle effect
+            if (pickupParticle != null)
+                Instantiate(pickupParticle, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }

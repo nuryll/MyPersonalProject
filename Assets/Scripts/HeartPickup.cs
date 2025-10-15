@@ -9,6 +9,8 @@ public class HeartPickup : MonoBehaviour
     public AudioClip pickupSound;    
     public float soundVolume = 0.8f;
 
+    public GameObject pickupParticle;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -25,6 +27,10 @@ public class HeartPickup : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(pickupSound, transform.position, soundVolume);
             }
+
+            // Particle effect
+            if (pickupParticle != null)
+                Instantiate(pickupParticle, transform.position, Quaternion.identity);
 
             Debug.Log("Heart collected! Enemies frozen!");
 
