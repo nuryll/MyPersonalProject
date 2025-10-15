@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,13 +22,22 @@ public class PlayerController : MonoBehaviour
 
     [Header("UI References")]
     public TextMeshProUGUI speedText;   
-    public TextMeshProUGUI weightText;  
+    public TextMeshProUGUI weightText;
+
+    [Header("Camera Control")]
+    public Camera mainCamera; // assign in Inspector
 
     void Update()
     {
 
         UpdateUI();
         HandleMovement();
+
+        //Press C to main camera disable
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            DisableCameraForSeconds(3f);
+        }
 
     }
 
@@ -93,5 +103,25 @@ public class PlayerController : MonoBehaviour
     {
         speed += speedIncrease;
         Debug.Log($"Collected Star! New Speed: {speed:F2}");
+    }
+
+    // ==============================
+    // CAMERA DISABLE SYSTEM
+    // ==============================
+    public void DisableCameraForSeconds(float duration = 3f)
+    {
+        if (mainCamera != null)
+            StartCoroutine(DisableCameraRoutine(duration));
+        else
+            Debug.LogWarning("Main Camera not assigned in PlayerController!");
+    }
+
+    private IEnumerator DisableCameraRoutine(float duration)
+    {
+        mainCamera.enabled = false;
+        Debug.Log("Camera disabled temporarily...");
+        yield return new WaitForSeconds(duration);
+        mainCamera.enabled = true;
+        Debug.Log("Camera re-enabled!");
     }
 }
