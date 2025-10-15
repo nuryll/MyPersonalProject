@@ -121,7 +121,7 @@ public class SpawnManager : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.color = new Color(0.9f, 0.7f, 0.1f, 0.3f);
+        Gizmos.color = new Color(0.9f, 0.7f, 0.1f, 0.3f); //Color.yellow with transparency. Makes easier to see and change area
         Gizmos.DrawCube(transform.position + Vector3.up * 0.5f,
                         new Vector3(spawnAreaSize.x, 0.1f, spawnAreaSize.z));
     }

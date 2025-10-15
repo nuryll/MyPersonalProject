@@ -123,9 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeDuration: 7
-  pickupSound: {fileID: 8300000, guid: 1cd77858ca9cb77438fc5b37640137d6, type: 3}
-  soundVolume: 0.8
-  countdownText: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: a65e44e8c694a3a4891eef0db109e331, type: 3}
+  soundVolume: 0.5
 --- !u!111 &5791456836745417827
 Animation:
   m_ObjectHideFlags: 0

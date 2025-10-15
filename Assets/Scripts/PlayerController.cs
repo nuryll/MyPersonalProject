@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float forwardInput;
 
     [Header("Growth Settings")]
-    public Transform model;             // Reference to the child model object
+    public Transform model;             // Reference to the child model object in player
     public float speedDecreaseAmount = 0.3f;
     public float growthAmount = 0.05f;
     public float minSpeed = 0.3f;

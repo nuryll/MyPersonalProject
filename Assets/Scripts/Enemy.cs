@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     private bool isChasing = false;
 
-    private bool isFrozen = false; // new state for freeze
+    private bool isFrozen = false; 
 
     void Start()
     {
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
         if (player == null) return;
 
-        // When frozen: spin in place and skip normal AI
+        // When frozen: spin in place 
         if (isFrozen)
         {
             transform.Rotate(Vector3.up * 180 * Time.deltaTime);
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
         // Move forward in the correct visual direction
         transform.position -= transform.forward * walkSpeed * Time.deltaTime;
 
-        // Animation
+        
         if (anim != null)
             anim.SetBool("isWalking", true);
     }

@@ -6,7 +6,7 @@ public class HeartPickup : MonoBehaviour
     public float freezeDuration = 7f; // how long enemies stay frozen
 
     [Header("Sound Settings")]
-    public AudioClip pickupSound;      // sound when player collects heart
+    public AudioClip pickupSound;    
     public float soundVolume = 0.8f;
 
     private void OnTriggerEnter(Collider other)
