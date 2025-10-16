@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private int score = 0;
 
+    public GameOverUI gameOverUI; 
+
+
     void Start()
     {
         UpdateScoreUI();
@@ -42,9 +45,17 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GAME OVER!");
-        // For now, just restart the scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
-        );
+        Time.timeScale = 0f;
+
+        if (gameOverUI != null)
+        {
+            gameOverUI.ShowGameOver(score);
+            Debug.Log("GameOverUI found and activated.");
+        }
+        else
+        {
+            Debug.LogWarning("GameOverUI not assigned in inspector!");
+        }
     }
+
 }

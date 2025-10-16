@@ -20,6 +20,7 @@ public class MainMenuUI : MonoBehaviour
         // Show only main menu at first
         mainMenuPanel.SetActive(true);
         infoPanel.SetActive(false);
+        
 
         // Disable all gameplay-related objects
         if (spawnManager != null) spawnManager.SetActive(false);
