@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class BackgroundMusicManager : MonoBehaviour
 {
     public static BackgroundMusicManager Instance;
@@ -12,7 +13,7 @@ public class BackgroundMusicManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton pattern – keeps one music manager alive between scenes
+        // Singleton pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -22,8 +23,11 @@ public class BackgroundMusicManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Setup audio source
-        audioSource = gameObject.AddComponent<AudioSource>();
+        // Setup AudioSource only once
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
         audioSource.clip = backgroundMusic;
         audioSource.loop = true;
         audioSource.playOnAwake = false;
@@ -32,24 +36,27 @@ public class BackgroundMusicManager : MonoBehaviour
 
     void Start()
     {
-        PlayMusic();
+        // Play music only if not already playing
+        if (!audioSource.isPlaying)
+            audioSource.Play();
     }
 
     public void PlayMusic()
     {
-        if (!audioSource.isPlaying && backgroundMusic != null)
+        if (audioSource != null && backgroundMusic != null && !audioSource.isPlaying)
             audioSource.Play();
     }
 
     public void StopMusic()
     {
-        if (audioSource.isPlaying)
+        if (audioSource != null && audioSource.isPlaying)
             audioSource.Stop();
     }
 
     public void SetVolume(float newVolume)
     {
-        audioSource.volume = Mathf.Clamp01(newVolume);
+        if (audioSource != null)
+            audioSource.volume = Mathf.Clamp01(newVolume);
     }
 }
 

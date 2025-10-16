@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private int score = 0;
 
-    public GameOverUI gameOverUI; 
+    public GameOverUI gameOverUI;
 
+    public static bool skipMainMenu = false;
 
     void Start()
     {
@@ -57,5 +58,9 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("GameOverUI not assigned in inspector!");
         }
     }
-
+    public void ResetForRestart()
+    {
+        skipMainMenu = true; // tell MainMenuUI to skip menu on next scene load
+        score = 0;
+    }
 }

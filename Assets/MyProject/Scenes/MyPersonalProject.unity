@@ -3794,6 +3794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1958285774}
   scoreText: {fileID: 1141334704}
+  backgroundMusic: {fileID: 1477659682}
 --- !u!1 &1978282674
 GameObject:
   m_ObjectHideFlags: 0

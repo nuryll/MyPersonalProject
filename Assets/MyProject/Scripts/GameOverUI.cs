@@ -35,14 +35,16 @@ public class GameOverUI : MonoBehaviour
     // === Restart button pressed ===
     public void OnRestartPressed()
     {
-        Debug.Log("Restart pressed, restarting gameplay...");
-
-        // Resume time
+        Debug.Log("Restart pressed, reloading scene...");
         Time.timeScale = 1f;
 
-        // Reload the same scene (starts game fresh)
+        // Tell GameManager to skip main menu
+        GameManager.Instance.ResetForRestart();
+
+        // Reload current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
 
 

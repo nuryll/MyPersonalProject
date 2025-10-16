@@ -17,6 +17,14 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
+        // If we are restarting after Game Over, skip menu
+        if (GameManager.skipMainMenu)
+        {
+            GameManager.skipMainMenu = false; // reset flag
+            OnStartGamePressed(); // start gameplay immediately
+            return;
+        }
+
         // Show only main menu at first
         mainMenuPanel.SetActive(true);
         infoPanel.SetActive(false);
