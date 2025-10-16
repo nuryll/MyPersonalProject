@@ -52,6 +52,7 @@ Navigate through a dynamic 3D maze as a child character in a third-person view. 
 
 **Gameplay Example:**  
 <img width="1607" height="825" alt="Skärmbild 2025-10-16 153347" src="https://github.com/user-attachments/assets/b19c0352-d466-4cd7-988a-dc6addec29f0" />
+<img width="1601" height="829" alt="Skärmbild 2025-10-16 201943" src="https://github.com/user-attachments/assets/09db8986-ccbd-4d6d-a62c-33f4c760e8a5" />
 <img width="1601" height="824" alt="Skärmbild 2025-10-16 192007" src="https://github.com/user-attachments/assets/ab4c7f03-c94c-4738-981c-a72dd3c82998" />
 <img width="1591" height="815" alt="Skärmbild 2025-10-16 191234" src="https://github.com/user-attachments/assets/7f3fec64-eaf1-4f8d-84fc-d4cfb93da50f" />
 <img width="1601" height="817" alt="Skärmbild 2025-10-16 191137" src="https://github.com/user-attachments/assets/34194a00-9801-4e18-b3c3-41bdc4745310" />
