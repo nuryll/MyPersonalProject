@@ -9,7 +9,9 @@ public class Enemy : MonoBehaviour
     public float detectionRange = 4f;    // start chasing if player closer than this
     public float stopRange = 7f;         // stop chasing if player goes farther than this
 
-    
+    public AudioClip hitSound;
+    public float soundVolume = 0.8f;
+
     private Transform player;
     private Animator anim;
 
@@ -95,6 +97,14 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.GameOver();
+
+            // Play pickup sound at pickup position
+            if (hitSound != null)
+            {
+                AudioSource.PlayClipAtPoint(hitSound, transform.position, soundVolume);
+            }
+
+            Debug.Log("Star collected! Speed increased!");
         }
     }
 

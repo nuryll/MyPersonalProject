@@ -447,6 +447,8 @@ MonoBehaviour:
   rotationSpeed: 70
   detectionRange: 4
   stopRange: 7
+  hitSound: {fileID: 8300000, guid: 1cd77858ca9cb77438fc5b37640137d6, type: 3}
+  soundVolume: 0.4
 --- !u!1 &4466542094686311951
 GameObject:
   m_ObjectHideFlags: 0
