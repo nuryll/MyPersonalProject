@@ -5,6 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager Instance; 
 
     public TextMeshProUGUI scoreText;
@@ -33,6 +34,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Reset flag on full scene reload
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            skipMainMenu = false;
     }
 
     public void AddScore(int points)

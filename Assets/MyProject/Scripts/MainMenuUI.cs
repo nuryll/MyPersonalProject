@@ -28,13 +28,16 @@ public class MainMenuUI : MonoBehaviour
         // Show only main menu at first
         mainMenuPanel.SetActive(true);
         infoPanel.SetActive(false);
-        
 
+        
         // Disable all gameplay-related objects
         if (spawnManager != null) spawnManager.SetActive(false);
         if (fences != null) fences.SetActive(false);
         if (player != null) player.enabled = false;
         if (uiGame != null) uiGame.SetActive(false);
+
+        // Stop music while menu is active
+        BackgroundMusicManager.Instance?.StopMusic();
 
         // Background music off initially
         if (backgroundMusic != null)
@@ -53,6 +56,8 @@ public class MainMenuUI : MonoBehaviour
         if (fences != null) fences.SetActive(true);
         if (player != null) player.enabled = true;
         if (uiGame != null) uiGame.SetActive(true);
+
+        BackgroundMusicManager.Instance?.PlayMusic();
 
         // Turn ON background music
         if (backgroundMusic != null)
