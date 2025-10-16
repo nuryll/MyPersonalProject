@@ -64,7 +64,7 @@ Navigate through a dynamic 3D maze as a child character in a third-person view. 
 
 
 **Win Panel:**  
- <img width="1607" height="825" alt="Skärmbild 2025-10-16 153347" src="https://github.com/user-attachments/assets/53b1ec5b-eecc-466b-8181-d703ab8e2457" />
+ <img width="1605" height="820" alt="Skärmbild 2025-10-16 191851" src="https://github.com/user-attachments/assets/956c7805-c1d3-45c0-abc7-43afcdca9759" />
 
 
 **Game Over Panel:**  
